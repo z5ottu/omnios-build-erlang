@@ -1,6 +1,6 @@
 PROJECT=erlang
-VERSION=21.2
-SAFE_VERSION=21.2
+VERSION=21.2.7
+SAFE_VERSION=21.2.7
 PROJECT_NAME=${PROJECT}-${SAFE_VERSION}
 PROJECT_VERSION=${VERSION}
 DOWNLOAD_SRC=https://github.com/erlang/otp/archive/OTP-${VERSION}.tar.gz
@@ -18,7 +18,7 @@ CONFIGURE_OPTS="--enable-smp-support --enable-dtrace --enable-threads --with-ssl
 
 clone:
 	curl ${DOWNLOAD_SRC} -o ${LOCAL_SRC_TAR}
-	tar -xf ${LOCAL_SRC_TAR}
+	tar -xvf ${LOCAL_SRC_TAR}
 	ls
 
 build:
