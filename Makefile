@@ -12,8 +12,9 @@ GROUPNAME=erlang
 
 PREFIX="${HOME}/build/erlang-${VERSION}"
 PKG_BUILD_DIR="${PREFIX}"
+export CPPFLAGS = -D_XOPEN_SOURCE=600 -D__EXTENSIONS__
 
-CONFIGURE_OPTS="--enable-smp-support --enable-dtrace --enable-threads --with-ssl=/usr --enable-dynamic-ssl-lib --enable-m64-build"
+CONFIGURE_OPTS="--enable-smp-support --enable-dtrace --enable-threads --with-ssl=/usr --enable-dynamic-ssl-lib --enable-m64-build --disable-hipe"
 
 
 clone:
@@ -24,6 +25,7 @@ clone:
 build:
 	@ echo 'Print env before building'
 	@ bash -c 'env'
+	./fix.sh
 	cd ${LOCAL_SRC}; ./otp_build autoconf
 	cd ${LOCAL_SRC}; export ERL_TOP=`pwd`
 	cd ${LOCAL_SRC}; ./configure "${CONFIGURE_OPTS}"
