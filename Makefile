@@ -31,8 +31,8 @@ build:
 
 package:
 	@echo do packagey things!
-	mkdir -p ${IPS_BUILD_DIR}/opt/ ${IPS_TMP_DIR}
-	cp -r ${PREFIX} ${IPS_BUILD_DIR}/opt
+	mkdir -p ${IPS_BUILD_DIR}/usr/ ${IPS_TMP_DIR}
+	cp -r ${PREFIX} ${IPS_BUILD_DIR}/usr
 
 	# SMF
 	mkdir -p ${IPS_BUILD_DIR}/lib/svc/manifest/database/
