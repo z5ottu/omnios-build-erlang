@@ -14,7 +14,7 @@ PREFIX="${HOME}/build/erlang-${VERSION}"
 PKG_BUILD_DIR="${PREFIX}"
 export CPPFLAGS = -D_XOPEN_SOURCE=600 -D__EXTENSIONS__
 
-CONFIGURE_OPTS="--enable-smp-support --enable-dtrace --enable-threads --with-ssl=/usr --enable-dynamic-ssl-lib --enable-m64-build --disable-hipe"
+CONFIGURE_OPTS="--enable-smp-support --enable-dtrace --enable-threads --with-ssl=/usr --enable-dynamic-ssl-lib --enable-m64-build --disable-hipe --prefix=${PREFIX}"
 
 
 clone:
@@ -30,6 +30,7 @@ build:
 	cd ${LOCAL_SRC}; export ERL_TOP=`pwd`
 	cd ${LOCAL_SRC}; ./configure "${CONFIGURE_OPTS}"
 	cd ${LOCAL_SRC}; make -j 8
+	cd ${LOCAL_SRC}; make install
 
 package:
 	@echo do packagey things!
