@@ -10,7 +10,7 @@ LOCAL_SRC=otp-OTP-${VERSION}
 USERNAME=erlang
 GROUPNAME=erlang
 
-PREFIX="${HOME}/build/erlang-${VERSION}"
+PREFIX="${HOME}/build/erlang"
 PKG_BUILD_DIR="${PREFIX}"
 export CPPFLAGS = -D_XOPEN_SOURCE=600 -D__EXTENSIONS__
 
@@ -34,8 +34,8 @@ build:
 
 package:
 	@echo do packagey things!
-	mkdir -p ${IPS_BUILD_DIR}/usr/ ${IPS_TMP_DIR}
-	cp -r ${PREFIX} ${IPS_BUILD_DIR}/usr
+	mkdir -p ${IPS_BUILD_DIR}/opt/ ${IPS_TMP_DIR}
+	cp -r ${PREFIX} ${IPS_BUILD_DIR}/opt
 
 publish: ips-package
 ifndef PKGSRVR
