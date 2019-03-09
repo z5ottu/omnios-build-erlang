@@ -37,12 +37,6 @@ package:
 	mkdir -p ${IPS_BUILD_DIR}/usr/ ${IPS_TMP_DIR}
 	cp -r ${PREFIX} ${IPS_BUILD_DIR}/usr
 
-	# SMF
-	mkdir -p ${IPS_BUILD_DIR}/lib/svc/manifest/database/
-	mkdir -p ${IPS_BUILD_DIR}/lib/svc/method/
-	cp smf.xml ${IPS_BUILD_DIR}/lib/svc/manifest/database/${PROJECT_NAME}.xml
-	cp method ${IPS_BUILD_DIR}/lib/svc/method/${PROJECT_NAME}
-
 publish: ips-package
 ifndef PKGSRVR
 	echo "Need to define PKGSRVR, something like http://localhost:10000"
