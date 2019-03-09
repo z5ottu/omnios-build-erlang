@@ -10,7 +10,7 @@ LOCAL_SRC=otp-OTP-${VERSION}
 USERNAME=erlang
 GROUPNAME=erlang
 
-export DESTDIR=${HOME}/build/erlang
+export DESTDIR=${HOME}/build/
 PREFIX="/opt/erlang"
 
 PKG_BUILD_DIR="${PREFIX}"
