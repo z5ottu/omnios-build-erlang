@@ -1,7 +1,7 @@
 PROJECT=erlang
 VERSION=21.2.7
 SAFE_VERSION=21.2.7
-PROJECT_NAME=${PROJECT}-${SAFE_VERSION}
+PROJECT_NAME=${PROJECT}
 PROJECT_VERSION=${VERSION}
 DOWNLOAD_SRC=https://github.com/erlang/otp/archive/OTP-${VERSION}.tar.gz
 LOCAL_SRC_TAR=src.tar.gz2
@@ -10,7 +10,9 @@ LOCAL_SRC=otp-OTP-${VERSION}
 USERNAME=erlang
 GROUPNAME=erlang
 
-PREFIX="${HOME}/build/erlang"
+export DESTDIR=${HOME}/build/
+PREFIX="/opt/erlang"
+
 PKG_BUILD_DIR="${PREFIX}"
 export CPPFLAGS = -D_XOPEN_SOURCE=600 -D__EXTENSIONS__
 
@@ -35,7 +37,7 @@ build:
 package:
 	@echo do packagey things!
 	mkdir -p ${IPS_BUILD_DIR}/opt/ ${IPS_TMP_DIR}
-	cp -r ${PREFIX} ${IPS_BUILD_DIR}/opt
+	cp -r ${DESTDIR}/* ${IPS_BUILD_DIR}
 
 publish: ips-package
 ifndef PKGSRVR

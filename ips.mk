@@ -6,7 +6,7 @@ USERNAME ?= ${PROJECT}
 GROUPNAME ?= ${PROJECT}
 
 IPS_BUILD_TIME=$(shell TZ=UTC date +"%Y%m%dT%H%M%SZ")
-export IPS_FMRI=server/${PROJECT_NAME}@${PROJECT_VERSION}:${IPS_BUILD_TIME}
+export IPS_FMRI=runtime/${PROJECT_NAME}@${PROJECT_VERSION}:${IPS_BUILD_TIME}
 export IPS_DESCRIPTION=${PROJECT_DESCRIPTION}
 export IPS_SUMMARAY=${IPS_DESCRIPTION}
 
@@ -17,8 +17,6 @@ set name=pkg.fmri value=${IPS_FMRI}
 set name=pkg.description value="${IPS_DESCRIPTION}"
 set name=pkg.summary value="${IPS_SUMMARAY}"
 set name=variant.arch value=${ARCH}
-group groupname=${GROUPNAME}
-user username=${USERNAME} group=${GROUPNAME} home-dir=/opt/${PROJECT}-${VERSION}
 endef
 export IPS_METADATA
 
@@ -54,8 +52,8 @@ define IPS_TRANSFORM
 <transform dir path=var$$ -> drop>
 <transform dir path=var/lib$$ -> drop>
 <transform file path=(var|lib)/svc/manifest/.*\.xml$ -> default restart_fmri svc:/system/manifest-import:default>
-<transform file dir -> set owner ${USERNAME}>
-<transform file dir -> set group ${GROUPNAME}>
+<transform file dir -> set owner root>
+<transform file dir -> set group bin>
 endef
 export IPS_TRANSFORM
 
