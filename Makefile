@@ -38,6 +38,7 @@ package:
 	@echo do packagey things!
 	mkdir -p ${IPS_BUILD_DIR}/opt/ ${IPS_TMP_DIR}
 	cp -r ${DESTDIR}/* ${IPS_BUILD_DIR}
+	chmod +x ${IPS_BUILD_DIR}/opt/erlang/lib/erlang/bin/*
 
 publish: ips-package
 ifndef PKGSRVR
