@@ -24,6 +24,7 @@ solve the “configured for kerberos but no krb5.h found” problem
 ln -s /usr/include/kerberosv5 /usr/ssl/include/kerberos
 ```
 
+# BUILD and INSTALL
 ```bash
 gmake
 gmake build
