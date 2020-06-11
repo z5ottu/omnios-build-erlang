@@ -5,7 +5,7 @@ https://github.com/basho/otp/tree/OTP_R16B02_basho10
 
 Tested on Omniosce r151030
 
-UPDATA: crypto app not start
+UPDATE: crypto app not works !!! :(
 
 # PRE
 ```bash
