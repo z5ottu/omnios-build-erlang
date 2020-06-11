@@ -18,6 +18,8 @@ pkg install kerberos-5@0.5.11-151030.0
 pkg install gnu-binutils@2.32-151030.0
 ```
 
+
+solve the “configured for kerberos but no krb5.h found” problem
 ```bash
 ln -s /usr/include/kerberosv5 /usr/ssl/include/kerberos
 ```
