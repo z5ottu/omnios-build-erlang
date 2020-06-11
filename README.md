@@ -5,6 +5,8 @@ https://github.com/basho/otp/tree/OTP_R16B02_basho10
 
 Tested on Omniosce r151030
 
+UPDATA: crypto app not start
+
 # PRE
 ```bash
 pkg install autoconf@2.69-151030.0
