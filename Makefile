@@ -7,8 +7,7 @@ PREFIX="/opt/erlang"
 PKG_BUILD_DIR="${PREFIX}"
 export CPPFLAGS = -D_XOPEN_SOURCE=600 -D__EXTENSIONS__
 
-CONFIGURE_OPTS="--enable-smp-support --enable-dtrace --enable-threads --with-ssl=/usr/ssl --enable-dynamic-ssl-lib --enable-m64-build --disable-hipe --without-odbc --prefix=${PREFIX}"
-
+CONFIGURE_OPTS="--enable-smp-support --enable-dtrace --enable-threads --with-ssl=/usr/ssh-0.9.7 --disable-dynamic-ssl-lib --enable-m64-build --disable-hipe --without-odbc --prefix=${PREFIX}"
 clone:
 	git clone -b 'basho-otp-16' ${DOWNLOAD_SRC} 'otp-16'
 
