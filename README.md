@@ -7,8 +7,16 @@ Tested on Omniosce r151034
 
 compile openssl-0.9.7
 ```
+git clone -b OpenSSL_0_9_7-stable https://github.com/openssl/openssl.git
+```
+```
 ./Configure shared --with-krb5-dir=/usr/krb5 --openssldir=/usr/ssh-0.9.7 solaris64-x86_64-gcc
 ```
+```
+gmake
+gmake install
+```
+
 UPDATE: crypto works on !!! :(
 
 # PRE
