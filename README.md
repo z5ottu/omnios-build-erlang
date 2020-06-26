@@ -6,10 +6,9 @@ https://github.com/basho/otp/tree/OTP_R16B02_basho10
 Tested on Omniosce r151030
 
 compile openssl-0.9.7
-```bash
-./Configure shared --with-krb5-lib=/usr/lib/krb5 --with-krb5-include=/usr/include/kerberosv5 --openssldir=/usr/ssh-0.9.7 solaris64-x86_64-gcc
 ```
-
+./Configure shared --with-krb5-dir=/usr/krb5 --openssldir=/usr/ssh-0.9.7 solaris64-x86_64-gcc
+```
 UPDATE: crypto app not works !!! :(
 
 # PRE
