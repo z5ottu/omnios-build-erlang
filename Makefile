@@ -17,7 +17,7 @@ build:
 	./fix.sh
 	cd ${LOCAL_SRC}; ./otp_build autoconf
 	cd ${LOCAL_SRC}; export ERL_TOP=`pwd`
-	cd ${LOCAL_SRC}; ./configure "${CONFIGURE_OPTS}"
+	cd ${LOCAL_SRC}; LDFLAGS="-L/usr/ssh-0.9.7/lib" ./configure "${CONFIGURE_OPTS}"
 	cd ${LOCAL_SRC}; gmake -j 8
 	cd ${LOCAL_SRC}; gmake install
 
